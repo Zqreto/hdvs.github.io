@@ -1,0 +1,388 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1rem;
+    line-height:1.5;
+}
+
+/* ================= BARRA SUPERIOR ================= */
+
+.barra-superior{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0.5rem 1.2rem;
+    background:#ffffff;
+    border-bottom:1px solid #ddd;
+    gap:0.8rem;
+    min-height:3.2rem;
+}
+
+/* BLOQUE IZQUIERDO */
+.lado-izquierdo{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    flex-shrink:0;
+}
+
+.logo-mini{
+    width:2.2rem;
+    height:auto;
+    flex-shrink:0;
+}
+
+/* Texto "CAMPUS VIRTUAL" junto al logo */
+.logo-label{
+    font-size:0.6rem;
+    font-weight:700;
+    color:#555;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    line-height:1.2;
+}
+
+.separador{
+    width:1px;
+    height:2rem;
+    background:#ccc;
+    flex-shrink:0;
+    margin:0 0.4rem;
+}
+
+.nombre-curso{
+    font-size:clamp(0.85rem, 1.8vw, 1.05rem);
+    font-weight:700;
+    color:#111;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:clamp(8rem, 25vw, 22rem);
+}
+
+/* BLOQUE DERECHO */
+.lado-derecho{
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    flex-shrink:0;
+}
+
+/* ICONOS */
+.iconos{
+    display:flex;
+    align-items:center;
+    gap:0.9rem;
+    font-size:1.05rem;
+    color:#444;
+}
+
+.iconos i{
+    cursor:pointer;
+    transition:color 0.2s;
+}
+
+.iconos i:hover{
+    color:#1f5b8f;
+}
+
+/* USUARIO */
+.usuario{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    cursor:pointer;
+}
+
+.usuario img{
+    width:2rem;
+    height:2rem;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.usuario span{
+    font-size:0.8rem;
+    font-weight:500;
+    color:#222;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:clamp(5rem, 12vw, 10rem);
+}
+
+/* CONFIG */
+.config{
+    font-size:1.1rem;
+    color:#444;
+    cursor:pointer;
+    transition:color 0.2s;
+}
+
+.config:hover{
+    color:#1f5b8f;
+}
+
+/* ================= MENÚ AZUL ================= */
+
+.nav-principal{
+    background:#1f5b8f;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.nav-principal::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-principal ul{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    flex-wrap:nowrap;
+    margin:0;
+    padding:0;
+    width:max-content;
+    min-width:100%;
+    justify-content:center;
+}
+
+.nav-principal li{
+    padding:0.7rem 1rem;
+    white-space:nowrap;
+}
+
+.nav-principal a{
+    color:white;
+    text-decoration:none;
+    font-size:clamp(0.75rem, 1.1vw, 0.95rem);
+}
+
+.nav-principal a:hover{
+    text-decoration:underline;
+}
+
+/* ================= TÍTULO ================= */
+
+.titulo-seccion{
+    text-align:center;
+    padding:3% 5%;
+}
+
+.titulo-seccion h1{
+    font-size:clamp(1.1rem, 3vw, 1.8rem);
+}
+
+/* ================= BUSCADOR ================= */
+
+.barra-busqueda{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin:1rem 1.5rem;
+    flex-wrap:wrap;
+}
+
+.input-con-icono{
+    position:relative;
+}
+
+.input-con-icono input{
+    width:clamp(160px, 40vw, 280px);
+    padding:8px 35px 8px 12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    background-color:#f2f2f2;
+    outline:none;
+    font-size:14px;
+}
+
+.input-con-icono input:focus{
+    border-color:#007bff;
+    background-color:#fff;
+}
+
+.icono{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:14px;
+    color:#666;
+    pointer-events:none;
+}
+
+.opciones{
+    color:#007bff;
+    text-decoration:none;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+.opciones:hover{
+    text-decoration:underline;
+}
+
+/* ================= TARJETAS ================= */
+
+.contenedor-tarjetas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap:1.5rem;
+    padding:3% 4%;
+}
+
+.card{
+    background:white;
+    padding:5%;
+    border-radius:1rem;
+    text-align:center;
+    box-shadow:0 0.3rem 0.8rem rgba(0,0,0,0.08);
+    width:100%;
+    max-width:22rem;
+    margin:auto;
+}
+
+.card img{
+    width:clamp(80px, 40%, 120px);
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:50%;
+    margin:0 auto 1rem;
+    display:block;
+}
+
+.card h2{
+    font-size:clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom:0.4rem;
+}
+
+.card p{
+    font-size:clamp(0.85rem, 2vw, 1rem);
+    margin-bottom:0.8rem;
+}
+
+.btn-ver{
+    display:inline-block;
+    padding:0.6em 1.4em;
+    background:#1f5b8f;
+    color:white;
+    text-decoration:none;
+    border-radius:0.6rem;
+    font-size:0.9rem;
+    margin:0.5rem 0;
+}
+
+.btn-ver:hover{
+    background:#174a77;
+}
+
+.redes{
+    font-size:clamp(0.9rem, 2vw, 1.1rem);
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin-top:0.5rem;
+}
+
+.redes a{
+    color:inherit;
+    text-decoration:none;
+    transition:opacity 0.2s;
+}
+
+.redes a:hover{
+    opacity:0.6;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    padding:2% 5%;
+    background:#e5e5e5;
+    margin-top:3%;
+    font-size:clamp(0.75rem, 1.5vw, 0.9rem);
+}
+
+/* ================= RESPONSIVE ================= */
+
+
+@media (max-width: 768px) {
+
+    /* ----- BARRA SUPERIOR ----- */
+
+    /* El nombre del curso se reduce pero NUNCA se oculta */
+    .nombre-curso{
+        font-size:0.8rem;
+        max-width:8rem;
+    }
+
+    
+    .logo-label{
+        display:none;
+    }
+
+
+    .iconos{
+        gap:0.6rem;
+        font-size:0.95rem;
+    }
+
+
+    .usuario span{
+        font-size:0.75rem;
+    }
+
+    /* ----- TARJETAS ----- */
+    .contenedor-tarjetas{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        max-width:100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .barra-superior{
+        padding:0.6rem 0.8rem;
+        gap:0.5rem;
+    }
+
+    /* En móviles muy estrechos ocultar solo el nombre de usuario
+       (el avatar y los iconos siguen visibles) */
+    .usuario span{
+        display:none;
+    }
+
+    /* El nombre del curso sigue visible pero más corto */
+    .nombre-curso{
+        max-width:5.5rem;
+        font-size:0.75rem;
+    }
+
+    /* Buscador en columna */
+    .barra-busqueda{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .input-con-icono input{
+        width:calc(100vw - 3rem);
+    }
+}
