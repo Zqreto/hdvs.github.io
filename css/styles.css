@@ -250,9 +250,16 @@ body{
     border-radius:1rem;
     text-align:center;
     box-shadow:0 0.3rem 0.8rem rgba(0,0,0,0.08);
+    border:1px solid rgba(0,0,0,0.1);
     width:100%;
     max-width:22rem;
     margin:auto;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 1rem 1.8rem rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -341,7 +348,7 @@ body{
         font-size:0.95rem;
     }
 
-
+    /* Nombre del usuario más pequeño */
     .usuario span{
         font-size:0.75rem;
     }
@@ -383,6 +390,6 @@ body{
     }
 
     .input-con-icono input{
-        width:calc(100vw - 3rem);
+        width:calc(100vw - 3rem); 
     }
 }
